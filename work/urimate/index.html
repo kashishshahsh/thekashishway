@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>urimate — the kashish way</title>
+  <meta name="description" content="Urimate — can thoughtful design change the way we talk about feminine hygiene?">
+  <meta name="theme-color" content="#0b1318">
+  <link rel="stylesheet" href="https://use.typekit.net/vcy1zir.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    @font-face {
+      font-family: 'Saker Sans';
+      font-weight: 900;
+      font-display: swap;
+      src: url('UrimateWebLayout_Folder/Fonts/SakerSansBlackPersonalUse-aorg.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Saker Sans';
+      font-weight: 700;
+      font-display: swap;
+      src: url('UrimateWebLayout_Folder/Fonts/SakerSansBoldPersonalUse-rwe9.ttf') format('truetype');
+    }
+
+    body { text-transform: none; }
+
+    :root {
+      --uri-yellow: #cdd636;
+      --uri-pink:   #d35b7a;
+      --uri-dark:   #2f1016;
+      --uri-cream:  #f5f0e8;
+    }
+
+    /* ─────────────────────────────────────────
+       1. HERO
+    ───────────────────────────────────────── */
+    .uri-hero {
+      padding: calc(clamp(1.25rem, 2.5vw, 1.75rem) * 2 + 5rem) var(--pad-x) clamp(3rem, 5vw, 5rem);
+    }
+    /* 52pt = 52px, Poppins Regular, tracking -25 = letter-spacing -0.025em */
+    .uri-hero__heading {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 3.6vw, 3.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--uri-cream);
+      max-width: 22ch;
+      margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+    }
+    .uri-hero__img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       2. INFINITE SCROLL (logo images)
+    ───────────────────────────────────────── */
+    .uri-scroll {
+      overflow: hidden;
+      padding: clamp(2rem, 4vw, 3.5rem) 0;
+    }
+    .uri-scroll__track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: clamp(2rem, 4vw, 4rem);
+      animation: uriScroll 28s linear infinite;
+      will-change: transform;
+    }
+    .uri-scroll__img {
+      height: clamp(60px, 6vw, 100px);
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+    @keyframes uriScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─────────────────────────────────────────
+       3. QUOTE
+    ───────────────────────────────────────── */
+    .uri-quote {
+      padding: clamp(5rem, 9vw, 9rem) var(--pad-x);
+      text-align: center;
+    }
+    /* 25pt = 25px, Poppins Regular, tracking -25 = -0.025em */
+    .uri-quote p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1rem, 1.75vw, 1.5625rem);
+      line-height: 1.5;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+    }
+
+    /* ─────────────────────────────────────────
+       4. URIMATE ENLARGED IMAGE
+    ───────────────────────────────────────── */
+    .uri-enlarged {
+      line-height: 0;
+    }
+    .uri-enlarged img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       5. CHALLENGE & STRATEGY
+    ───────────────────────────────────────── */
+    .uri-cs {
+      background: var(--uri-cream);
+      padding: clamp(5rem, 9vw, 8rem) var(--pad-x);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+    }
+    /* 26pt = 26px, Poppins Medium (500), tracking -50 = -0.05em */
+    .uri-cs__header {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.1rem, 1.8vw, 1.625rem);
+      letter-spacing: -0.05em;
+      color: #1a1a1a;
+      margin-bottom: 1.25rem;
+    }
+    /* 20pt = 20px, tracking 0, leading 24pt → line-height: 1.2 */
+    .uri-cs__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1.4vw, 1.25rem);
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: #1a1a1a;
+    }
+
+    /* ─────────────────────────────────────────
+       6. MASCOT BAND + SECTION
+    ───────────────────────────────────────── */
+    .uri-band {
+      background: var(--uri-yellow);
+      overflow: hidden;
+      line-height: 0;
+    }
+    .uri-band__text {
+      display: block;
+      font-family: 'Saker Sans', 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: clamp(6rem, 16vw, 18rem);
+      line-height: 0.88;
+      color: var(--uri-dark);
+      white-space: nowrap;
+      letter-spacing: -0.03em;
+      text-align: center;
+    }
+    .uri-mascot {
+      background: var(--uri-yellow);
+      padding: clamp(3rem, 5vw, 5rem) var(--pad-x) clamp(5rem, 9vw, 8rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .uri-mascot__label {
+      font-family: 'Saker Sans', 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--uri-dark);
+      opacity: 0.6;
+      margin-bottom: 1rem;
+    }
+    .uri-mascot__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1.3vw, 1.05rem);
+      line-height: 1.7;
+      color: var(--uri-dark);
+    }
+    .uri-mascot__img {
+      width: 100%;
+      max-width: 360px;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.18));
+    }
+
+    /* ─────────────────────────────────────────
+       7. PACKAGING BAND + SECTION
+    ───────────────────────────────────────── */
+    .uri-packaging {
+      background: var(--uri-yellow);
+      padding: clamp(2rem, 4vw, 4rem) var(--pad-x) clamp(5rem, 9vw, 8rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .uri-packaging__img {
+      width: 100%;
+      display: block;
+      max-height: 680px;
+      object-fit: contain;
+    }
+    .uri-packaging__label {
+      font-family: 'Saker Sans', 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--uri-dark);
+      opacity: 0.6;
+      margin-bottom: 1rem;
+    }
+    .uri-packaging__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1.3vw, 1.05rem);
+      line-height: 1.7;
+      color: var(--uri-dark);
+    }
+
+    /* ─────────────────────────────────────────
+       8. SHELF IMAGE
+    ───────────────────────────────────────── */
+    .uri-shelf { line-height: 0; }
+    .uri-shelf img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       9. WOMEN IMAGE
+    ───────────────────────────────────────── */
+    .uri-women { line-height: 0; }
+    .uri-women img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       10. COMPETITION
+    ───────────────────────────────────────── */
+    .uri-competition {
+      background: var(--uri-yellow);
+      padding: clamp(5rem, 9vw, 8rem) var(--pad-x);
+    }
+    .uri-competition__heading {
+      font-family: 'Saker Sans', 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: clamp(2rem, 5vw, 5.5rem);
+      line-height: 1.0;
+      color: var(--uri-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    }
+    .uri-competition__heading em { font-style: italic; }
+    .uri-competition__img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       11. CTA
+    ───────────────────────────────────────── */
+    .uri-cta {
+      padding: clamp(6rem, 11vw, 11rem) var(--pad-x);
+    }
+    .uri-cta__pre {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+      max-width: 55ch;
+    }
+    .uri-cta__heading {
+      font-family: 'Saker Sans', 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 4.5vw, 5rem);
+      line-height: 1.05;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      max-width: 20ch;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .uri-cta__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.7rem 1.75rem;
+      border: 1.5px solid var(--uri-pink);
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+      color: var(--uri-pink);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.25s, color 0.25s;
+    }
+    .uri-cta__btn:hover {
+      background: var(--uri-pink);
+      color: #fff;
+    }
+
+    /* ─────────────────────────────────────────
+       12. WHAT SHAPED
+    ───────────────────────────────────────── */
+    .uri-shaped {
+      padding: clamp(5rem, 9vw, 8rem) var(--pad-x);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .uri-shaped__bar {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: rgba(211, 91, 122, 0.12);
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      letter-spacing: 0.15em;
+      color: var(--uri-pink);
+      text-transform: uppercase;
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+    .uri-shaped__keywords {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: clamp(0.5rem, 1.5vw, 1.5rem);
+      flex-wrap: nowrap;
+    }
+    .uri-kw {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.05;
+    }
+    .uri-kw__e {
+      font-family: adobe-handwriting-ernie, cursive;
+      font-size: clamp(1.3rem, 2.6vw, 2.3rem);
+      color: var(--uri-pink);
+      line-height: 1;
+    }
+    .uri-kw__p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 1.9vw, 1.6rem);
+      letter-spacing: -0.05em;
+      color: #ffffff;
+    }
+    .uri-kw__dot {
+      color: #ffffff;
+      font-size: clamp(0.4rem, 0.7vw, 0.6rem);
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    /* ─────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .uri-cs         { grid-template-columns: 1fr; }
+      .uri-mascot     { grid-template-columns: 1fr; }
+      .uri-packaging  { grid-template-columns: 1fr; }
+      .uri-shaped__keywords { flex-direction: column; gap: 1.5rem; }
+      .uri-band__text { font-size: clamp(4rem, 18vw, 10rem); }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">skip to content</a>
+
+  <header id="nav" class="nav is-visible" role="banner">
+    <a href="../../" class="nav__brand">the kashish way</a>
+    <nav class="nav__links" aria-label="main navigation">
+      <a href="../../work/"    class="nav__link is-active">work</a>
+      <a href="../../gallery/" class="nav__link">gallery</a>
+      <a href="../../blogs/"   class="nav__link">my notebook</a>
+      <a href="../../about/"   class="nav__link">who am i?</a>
+      <a href="../../contact/" class="nav__link">let's talk!</a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle"
+            aria-label="open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="nav-drawer" class="nav__drawer" aria-label="mobile navigation">
+    <a href="../../work/"    class="nav__link">work</a>
+    <a href="../../gallery/" class="nav__link">gallery</a>
+    <a href="../../blogs/"   class="nav__link">my notebook</a>
+    <a href="../../about/"   class="nav__link">who am i?</a>
+    <a href="../../contact/" class="nav__link">let's talk!</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ── 1. HERO ── -->
+    <section class="uri-hero">
+      <h1 class="uri-hero__heading reveal">
+        Can thoughtful design change the way we talk about feminine hygiene?
+      </h1>
+      <img src="Urimate-Images/UrimateProduct.png"
+           alt="Urimate packaging — held in hand and laid flat on grass"
+           class="uri-hero__img reveal" data-delay="0.05">
+    </section>
+
+    <!-- ── 2. INFINITE SCROLL ── -->
+    <div class="uri-scroll" aria-hidden="true">
+      <div class="uri-scroll__track">
+        <!-- set 1 -->
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <!-- set 2 — duplicate for seamless loop -->
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimatePink(InfiniteScroll).png"   class="uri-scroll__img" alt="">
+        <img src="Urimate-Images/UrimateYellow(InfiniteScroll).png" class="uri-scroll__img" alt="">
+      </div>
+    </div>
+
+    <!-- ── 3. QUOTE ── -->
+    <div class="uri-quote reveal">
+      <p>Design can't solve every problem.<br>
+         But it can change how people experience it.</p>
+    </div>
+
+    <!-- ── 4. URIMATE ENLARGED ── -->
+    <div class="uri-enlarged">
+      <img src="Urimate-Images/UrimateEnlarged.png"
+           alt="Urimate brand identity — enlarged"
+           class="reveal">
+    </div>
+
+    <!-- ── 5. CHALLENGE & STRATEGY ── -->
+    <section class="uri-cs">
+      <div class="reveal" data-delay="0.05">
+        <span class="uri-cs__header">Challenge</span>
+        <p class="uri-cs__text">Conversations around feminine hygiene are often surrounded by discomfort, stigma and embarrassment. Many products communicate function, but very few create emotional comfort.</p>
+      </div>
+      <div class="reveal" data-delay="0.12">
+        <span class="uri-cs__header">Strategy</span>
+        <p class="uri-cs__text">Instead of designing another healthcare brand, the focus was on creating an identity that feels approachable, modern and reassuring. The goal was to make care feel normal.</p>
+      </div>
+    </section>
+
+    <!-- ── 6. MASCOT ── -->
+    <div class="uri-band" aria-hidden="true">
+      <span class="uri-band__text">MASCOT</span>
+    </div>
+    <section class="uri-mascot">
+      <div class="reveal" data-delay="0.05">
+        <p class="uri-mascot__label">The character</p>
+        <p class="uri-mascot__text">The mascot, inspired by the shape of a urinary bladder, brings a playful and friendly personality to the brand. It helps make an otherwise serious and sensitive topic feel light, approachable, and easy to talk about. By blending education with charm, the character makes the brand more relatable and adds a memorable, human touch to the packaging.</p>
+      </div>
+      <img src="Urimate-Images/UrimateMascot.svg"
+           alt="Urimate mascot — a friendly, round pink character"
+           class="uri-mascot__img reveal" data-delay="0.1">
+    </section>
+
+    <!-- ── 7. PACKAGING ── -->
+    <div class="uri-band" aria-hidden="true">
+      <span class="uri-band__text">PACKAGING</span>
+    </div>
+    <section class="uri-packaging">
+      <img src="Urimate-Images/UrimatePackaging.png"
+           alt="Urimate packaging design"
+           class="uri-packaging__img reveal" data-delay="0.05">
+      <div class="reveal" data-delay="0.1">
+        <p class="uri-packaging__label">The design</p>
+        <p class="uri-packaging__text">The packaging design reflects this purpose — clear, minimal, and informative. It balances sensitivity with empowerment, using visuals and tone that make the product approachable, trustworthy, and discreet while standing out on shelves. The goal was to create something a woman would feel confident picking up.</p>
+      </div>
+    </section>
+
+    <!-- ── 8. SHELF DISPLAY ── -->
+    <div class="uri-shelf">
+      <img src="Urimate-Images/UrimateShelf.png"
+           alt="Urimate products displayed on shelf"
+           class="reveal">
+    </div>
+
+    <!-- ── 9. HAPPY WOMEN ── -->
+    <div class="uri-women">
+      <img src="Urimate-Images/HappyWomenImage.jpg"
+           alt="Five women laughing and celebrating together"
+           class="reveal">
+    </div>
+
+    <!-- ── 10. COMPETITION ── -->
+    <section class="uri-competition">
+      <h2 class="uri-competition__heading reveal">
+        Which one are you <em>most likely</em> to buy?
+      </h2>
+      <img src="Urimate-Images/ProductCompetition.png"
+           alt="Urimate alongside competitor products on a retail shelf"
+           class="uri-competition__img reveal" data-delay="0.1">
+    </section>
+
+    <!-- ── 11. CTA ── -->
+    <section class="uri-cta">
+      <p class="uri-cta__pre reveal">
+        This wasn't designed to remain a portfolio project.<br>
+        It was designed to become part of someone's everyday routine.
+      </p>
+      <h2 class="uri-cta__heading reveal" data-delay="0.08">
+        If you'd like to explore the brand, here's where you can find it.
+      </h2>
+      <a href="https://urimate.in" target="_blank" rel="noopener noreferrer"
+         class="uri-cta__btn reveal" data-delay="0.14">
+        Visit Urimate
+      </a>
+    </section>
+
+    <!-- ── 12. WHAT SHAPED ── -->
+    <section class="uri-shaped">
+      <span class="uri-shaped__bar reveal">What shaped this project?</span>
+      <div class="uri-shaped__keywords reveal" data-delay="0.1">
+        <span class="uri-kw">
+          <span class="uri-kw__e">Breaking</span>
+          <span class="uri-kw__p">taboos</span>
+        </span>
+        <span class="uri-kw__dot">●</span>
+        <span class="uri-kw">
+          <span class="uri-kw__e">women's</span>
+          <span class="uri-kw__p">health</span>
+        </span>
+        <span class="uri-kw__dot">●</span>
+        <span class="uri-kw">
+          <span class="uri-kw__e">Approachable</span>
+          <span class="uri-kw__p">care</span>
+        </span>
+        <span class="uri-kw__dot">●</span>
+        <span class="uri-kw">
+          <span class="uri-kw__e">everyday</span>
+          <span class="uri-kw__p">confidence</span>
+        </span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <p class="footer__brand">the kashish way</p>
+      <p class="footer__tagline">communication design rooted in culture, craft, and curiosity.</p>
+      <p class="footer__copy">© 2025 kashish shah. all rights reserved.</p>
+    </div>
+    <div class="footer__right">
+      <nav class="footer__nav">
+        <a href="../../work/">work</a>
+        <a href="../../gallery/">gallery</a>
+        <a href="../../blogs/">my notebook</a>
+        <a href="../../about/">who am i?</a>
+        <a href="../../contact/">let's talk!</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.behance.net/kashishshah23" target="_blank" rel="noopener noreferrer">behance</a>
+        <a href="https://www.instagram.com/kashishshahdesign/" target="_blank" rel="noopener noreferrer">instagram</a>
+        <a href="https://www.linkedin.com/in/kashish-shah-graphic-designer/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

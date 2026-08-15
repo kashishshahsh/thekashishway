@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>csmvs - the kashish way</title>
+  <meta name="description" content="CSMVS - how do you make a hundred-year-old museum feel alive to a generation that grew up online? A rebrand and interaction strategy for Mumbai's premier heritage museum.">
+  <meta name="theme-color" content="#1f261c">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body { text-transform: none; }
+
+    :root {
+      --csmvs-red:      #cf3d28;
+      --csmvs-green:     #1f261c;
+      --csmvs-gold:      #eb943b;
+      --csmvs-burgundy:  #5c0a21;
+      --csmvs-cream:     #ede7d5;
+      --csmvs-serif:     'Playfair Display', serif;
+    }
+
+    /* ── HERO ── */
+    .csmvs-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: calc(clamp(1.25rem, 2.5vw, 1.75rem) * 2 + 3rem) var(--pad-x) clamp(2.5rem, 5vw, 4rem);
+      overflow: hidden;
+    }
+    .csmvs-hero__bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .csmvs-hero__scrim {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(11,19,24,0.35) 0%, rgba(11,19,24,0.55) 55%, rgba(11,19,24,0.92) 100%);
+      z-index: -1;
+    }
+    .csmvs-hero__eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--csmvs-gold);
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    }
+    .csmvs-hero__heading {
+      font-family: var(--csmvs-serif);
+      font-weight: 500;
+      font-size: clamp(2rem, 4.6vw, 4.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: #fff;
+      max-width: 20ch;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+    .csmvs-hero__meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+    .csmvs-hero__meta-label {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.4rem;
+    }
+    .csmvs-hero__meta-value {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.75rem, 1vw, 0.95rem);
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    /* ── SHARED ── */
+    .csmvs-section { padding: clamp(3.5rem, 7vw, 6.5rem) var(--pad-x); }
+    .csmvs-section--tight { padding-top: 0; }
+    .csmvs-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--csmvs-gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .csmvs-heading {
+      font-family: var(--csmvs-serif);
+      font-weight: 500;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      max-width: 26ch;
+      margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    }
+    .csmvs-body {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      line-height: 1.75;
+      color: var(--t60);
+      max-width: 62ch;
+    }
+
+    /* ── BRIEF ── */
+    .csmvs-brief__quote {
+      font-family: var(--csmvs-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.15rem, 2.2vw, 1.75rem);
+      line-height: 1.5;
+      color: var(--text);
+      max-width: 34ch;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+    .csmvs-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      border-top: 1px solid var(--t10);
+      border-bottom: 1px solid var(--t10);
+      padding: clamp(2rem, 4vw, 3rem) 0;
+      margin: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+    .csmvs-stat__num {
+      font-family: var(--csmvs-serif);
+      font-weight: 600;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      color: var(--csmvs-red);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .csmvs-stat__label {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+      color: var(--t40);
+      line-height: 1.4;
+    }
+
+    /* ── AUDIENCE ── */
+    .csmvs-audience {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+    }
+    .csmvs-audience__card {
+      background: var(--t06);
+      border-radius: 10px;
+      padding: clamp(1.5rem, 2.5vw, 2rem);
+    }
+    .csmvs-audience__tag {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--csmvs-green);
+      background: var(--csmvs-gold);
+      border-radius: 20px;
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .csmvs-audience__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    .csmvs-audience__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--t40);
+    }
+
+    /* ── APPROACH ── */
+    .csmvs-phases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 2rem);
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .csmvs-phase__num {
+      font-family: var(--csmvs-serif);
+      font-weight: 600;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--csmvs-red);
+      opacity: 0.4;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .csmvs-phase__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1rem, 1.4vw, 1.2rem);
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .csmvs-phase__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--t40);
+    }
+
+    /* ── BRAND IDENTITY ── */
+    .csmvs-identity {
+      background: var(--csmvs-cream);
+      color: var(--csmvs-green);
+    }
+    .csmvs-identity .csmvs-eyebrow { color: var(--csmvs-red); }
+    .csmvs-identity .csmvs-heading { color: var(--csmvs-green); }
+    .csmvs-identity .csmvs-body { color: rgba(31,38,28,0.65); }
+
+    .csmvs-logo-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 10px;
+      padding: clamp(2rem, 4vw, 3.5rem);
+      margin: clamp(2rem, 4vw, 3rem) 0;
+    }
+    .csmvs-logo-panel img { width: min(100%, 480px); height: auto; display: block; }
+
+    .csmvs-type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      margin: clamp(2rem, 4vw, 3rem) 0;
+    }
+    .csmvs-type-card {
+      background: rgba(31,38,28,0.04);
+      border-radius: 10px;
+      padding: clamp(1.5rem, 2.5vw, 2rem);
+    }
+    .csmvs-type-card__sample {
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      line-height: 1;
+      margin-bottom: 1rem;
+      color: var(--csmvs-green);
+    }
+    .csmvs-type-card--serif .csmvs-type-card__sample { font-family: var(--csmvs-serif); font-weight: 500; }
+    .csmvs-type-card--sans .csmvs-type-card__sample  { font-family: 'Poppins', sans-serif; font-weight: 500; }
+    .csmvs-type-card__name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--csmvs-green);
+      margin-bottom: 0.4rem;
+    }
+    .csmvs-type-card__desc {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: rgba(31,38,28,0.55);
+    }
+
+    .csmvs-palette {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(0.5rem, 1vw, 0.85rem);
+      margin: clamp(2rem, 4vw, 3rem) 0;
+    }
+    .csmvs-swatch {
+      border-radius: 10px;
+      padding: clamp(1.25rem, 2vw, 1.75rem) clamp(1rem, 1.5vw, 1.25rem);
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .csmvs-swatch__name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.8rem, 1vw, 0.95rem);
+    }
+    .csmvs-swatch__hex {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 0.75rem;
+      opacity: 0.75;
+      margin-top: 0.25rem;
+    }
+
+    .csmvs-motifs-wrap { margin: clamp(2rem, 4vw, 3rem) 0; }
+    .csmvs-motifs-wrap img { width: 100%; display: block; border-radius: 10px; margin-bottom: clamp(1.5rem, 3vw, 2rem); }
+
+    /* ── GALLERY GRID ── */
+    .csmvs-gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: clamp(0.75rem, 1.5vw, 1.25rem);
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
+    .csmvs-gallery__item { grid-column: span 3; }
+    .csmvs-gallery__item--full { grid-column: span 6; }
+    .csmvs-gallery__item--wide { grid-column: span 4; }
+    .csmvs-gallery__item--narrow { grid-column: span 2; }
+    .csmvs-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      aspect-ratio: 4 / 3;
+    }
+    .csmvs-gallery__item--wide img   { aspect-ratio: 16 / 10; }
+    .csmvs-gallery__item--narrow img { aspect-ratio: 3 / 4; }
+    .csmvs-gallery__item--full img   { aspect-ratio: 21 / 9; }
+    .csmvs-gallery__label {
+      margin-top: 0.6rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--t40);
+      line-height: 1.4;
+    }
+
+    /* ── INTERACTIVE LAYER ── */
+    .csmvs-interactive {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
+    .csmvs-interactive__card {
+      border: 1px solid var(--t10);
+      border-radius: 10px;
+      padding: clamp(1.75rem, 3vw, 2.5rem);
+    }
+    .csmvs-interactive__num {
+      font-family: var(--csmvs-serif);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--csmvs-gold);
+      margin-bottom: 1rem;
+    }
+    .csmvs-interactive__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .csmvs-interactive__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--t40);
+    }
+
+    /* ── OUTREACH ── */
+    .csmvs-outreach {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
+    .csmvs-outreach__card {
+      background: var(--t06);
+      border-radius: 10px;
+      padding: clamp(1.5rem, 2.5vw, 1.75rem);
+    }
+    .csmvs-outreach__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    .csmvs-outreach__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: var(--t40);
+    }
+
+    /* ── FEEDBACK ── */
+    .csmvs-feedback {
+      background: var(--csmvs-burgundy);
+      text-align: center;
+    }
+    .csmvs-feedback__quote {
+      font-family: var(--csmvs-serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      line-height: 1.6;
+      color: #fff;
+      max-width: 46ch;
+      margin: 0 auto 1.5rem;
+    }
+    .csmvs-feedback__cite {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── CHALLENGES ── */
+    .csmvs-challenges {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1rem, 2vw, 2rem) clamp(2rem, 4vw, 3rem);
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
+    .csmvs-challenge {
+      border-left: 2px solid var(--csmvs-red);
+      padding-left: 1.25rem;
+    }
+    .csmvs-challenge__title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .csmvs-challenge__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--t40);
+    }
+
+    /* ── IMPACT ── */
+    .csmvs-impact {
+      background: var(--csmvs-green);
+      text-align: center;
+    }
+    .csmvs-impact .csmvs-eyebrow { color: var(--csmvs-gold); }
+    .csmvs-impact__heading {
+      font-family: var(--csmvs-serif);
+      font-weight: 500;
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      line-height: 1.4;
+      color: #fff;
+      max-width: 32ch;
+      margin: 0 auto 1.25rem;
+    }
+    .csmvs-impact__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+      max-width: 52ch;
+      margin: 0 auto;
+    }
+
+    /* ── SHAPED ── */
+    .csmvs-shaped__bar {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--csmvs-cream);
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      letter-spacing: 0.15em;
+      color: var(--csmvs-red);
+      text-transform: uppercase;
+      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .csmvs-shaped__keywords {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: clamp(0.5rem, 1.5vw, 1.5rem);
+      flex-wrap: wrap;
+    }
+    .csmvs-kw { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.05; }
+    .csmvs-kw__p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.95rem, 1.8vw, 1.5rem);
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .csmvs-kw__e {
+      font-family: var(--csmvs-serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.75rem);
+      color: var(--csmvs-red);
+      line-height: 1;
+    }
+    .csmvs-kw__dot { color: var(--t40); font-size: 0.6rem; flex-shrink: 0; align-self: center; }
+
+    /* ── CREDITS + BRAND BOOK ── */
+    .csmvs-credits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+      border-top: 1px solid var(--t10);
+      padding-top: clamp(2rem, 4vw, 2.5rem);
+      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .csmvs-credit__label {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--t40);
+      margin-bottom: 0.4rem;
+    }
+    .csmvs-credit__value {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .csmvs-brandbook-cta { text-align: center; }
+    .csmvs-brandbook-cta__btn {
+      display: inline-block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--csmvs-green);
+      background: var(--csmvs-gold);
+      border-radius: 50px;
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      transition: transform 0.25s var(--ease);
+    }
+    .csmvs-brandbook-cta__btn:hover { transform: translateY(-2px); }
+
+    @media (max-width: 900px) {
+      .csmvs-hero__meta { grid-template-columns: repeat(2, 1fr); }
+      .csmvs-stats { grid-template-columns: repeat(2, 1fr); }
+      .csmvs-audience { grid-template-columns: repeat(2, 1fr); }
+      .csmvs-phases { grid-template-columns: 1fr; }
+      .csmvs-type-grid { grid-template-columns: 1fr; }
+      .csmvs-palette { grid-template-columns: repeat(2, 1fr); }
+      .csmvs-gallery__item, .csmvs-gallery__item--wide, .csmvs-gallery__item--narrow { grid-column: span 6; }
+      .csmvs-interactive { grid-template-columns: 1fr; }
+      .csmvs-outreach { grid-template-columns: repeat(2, 1fr); }
+      .csmvs-challenges { grid-template-columns: 1fr; }
+      .csmvs-credits { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">skip to content</a>
+
+  <header id="nav" class="nav is-visible" role="banner">
+    <a href="../../" class="nav__brand">the kashish way</a>
+    <nav class="nav__links" aria-label="main navigation">
+      <a href="../../work/"    class="nav__link is-active">work</a>
+      <a href="../../gallery/" class="nav__link">gallery</a>
+      <a href="../../blogs/"   class="nav__link">my notebook</a>
+      <a href="../../about/"   class="nav__link">who am i?</a>
+      <a href="../../contact/" class="nav__link">let's talk!</a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle"
+            aria-label="open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="nav-drawer" class="nav__drawer" aria-label="mobile navigation">
+    <a href="../../work/"    class="nav__link">work</a>
+    <a href="../../gallery/" class="nav__link">gallery</a>
+    <a href="../../blogs/"   class="nav__link">my notebook</a>
+    <a href="../../about/"   class="nav__link">who am i?</a>
+    <a href="../../contact/" class="nav__link">let's talk!</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ── HERO ── -->
+    <section class="csmvs-hero">
+      <img src="CSMVS-Images/HeroCover.jpg" alt="CSMVS museum building at dusk with the refreshed CSMVS 101 wordmark" class="csmvs-hero__bg">
+      <div class="csmvs-hero__scrim"></div>
+      <span class="csmvs-hero__eyebrow reveal">case study - museum experience</span>
+      <h1 class="csmvs-hero__heading reveal" data-delay="0.05">
+        How do you make a hundred-year-old museum feel alive to a generation that grew up online?
+      </h1>
+      <div class="csmvs-hero__meta reveal" data-delay="0.1">
+        <div>
+          <span class="csmvs-hero__meta-label">Role</span>
+          <span class="csmvs-hero__meta-value">Rebranding, interaction strategy &amp; campaign design</span>
+        </div>
+        <div>
+          <span class="csmvs-hero__meta-label">Team</span>
+          <span class="csmvs-hero__meta-value">With Aryan Jamdar &amp; Siddh Jhala</span>
+        </div>
+        <div>
+          <span class="csmvs-hero__meta-label">Client</span>
+          <span class="csmvs-hero__meta-value">Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Mumbai</span>
+        </div>
+        <div>
+          <span class="csmvs-hero__meta-label">Course</span>
+          <span class="csmvs-hero__meta-value">Collaborative Studio - Design for SDGs, ATLAS ISDI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE BRIEF ── -->
+    <section class="csmvs-section">
+      <span class="csmvs-eyebrow reveal">the brief</span>
+      <p class="csmvs-brief__quote reveal" data-delay="0.05">"Traditional display methods feel passive and outdated for digitally native generations - creating a disconnect that reduces interest in visiting and experiencing museums."</p>
+      <p class="csmvs-body reveal" data-delay="0.1">CSMVS - formerly the Prince of Wales Museum - is one of Mumbai's most iconic institutions: a monumental Indo-Saracenic building holding over 70,000 artifacts spanning 5,000 years, from Harappan seals to Emperor Akbar's armour. It draws more than a million visitors a year. But very few of them are under twenty-four. Our brief, set by the museum's curators, was to close that gap - not by simplifying the collection, but by changing how it's discovered.</p>
+      <div class="csmvs-stats reveal" data-delay="0.15">
+        <div>
+          <span class="csmvs-stat__num">1922</span>
+          <span class="csmvs-stat__label">Founded as the Prince of Wales Museum</span>
+        </div>
+        <div>
+          <span class="csmvs-stat__num">70,000+</span>
+          <span class="csmvs-stat__label">Artifacts across 20 galleries</span>
+        </div>
+        <div>
+          <span class="csmvs-stat__num">1M+</span>
+          <span class="csmvs-stat__label">Visitors annually - few under 24</span>
+        </div>
+        <div>
+          <span class="csmvs-stat__num">2018</span>
+          <span class="csmvs-stat__label">Declared a UNESCO World Heritage site</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHO WE DESIGNED FOR ── -->
+    <section class="csmvs-section csmvs-section--tight">
+      <span class="csmvs-eyebrow reveal">who we designed for</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">Four groups, one museum.</h2>
+      <div class="csmvs-audience reveal" data-delay="0.1">
+        <div class="csmvs-audience__card">
+          <span class="csmvs-audience__tag">Primary</span>
+          <p class="csmvs-audience__title">Digitally native youth, 16-24</p>
+          <p class="csmvs-audience__text">See traditional museums as passive and text-heavy. Seek gamified, highly interactive, visually stimulating experiences.</p>
+        </div>
+        <div class="csmvs-audience__card">
+          <span class="csmvs-audience__tag">Secondary</span>
+          <p class="csmvs-audience__title">General public &amp; museum-goers</p>
+          <p class="csmvs-audience__text">Regular visitors and tourists looking for a more personalised, guided, hands-on experience at CSMVS.</p>
+        </div>
+        <div class="csmvs-audience__card">
+          <span class="csmvs-audience__tag">Institutional</span>
+          <p class="csmvs-audience__title">CSMVS curators &amp; management</p>
+          <p class="csmvs-audience__text">Invested in modernising the museum's brand, increasing footfall, and safely displaying fragile artifacts.</p>
+        </div>
+        <div class="csmvs-audience__card">
+          <span class="csmvs-audience__tag">Execution</span>
+          <p class="csmvs-audience__title">Transit &amp; campus partners</p>
+          <p class="csmvs-audience__text">Times OOH for transit-station billboards, and host colleges facilitating the campus pop-up exhibitions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE APPROACH ── -->
+    <section class="csmvs-section csmvs-section--tight">
+      <span class="csmvs-eyebrow reveal">the approach</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">A layer for before you arrive, a layer for while you're there, and a layer that meets you halfway.</h2>
+      <p class="csmvs-body reveal" data-delay="0.1">A visual refresh alone wouldn't solve this. The final solution operates across three connected layers, each addressing a different stage of the visitor's journey - from a billboard at a train station, to a gallery floor, to a college campus that's never seen the museum at all.</p>
+      <div class="csmvs-phases">
+        <div class="reveal" data-delay="0.05">
+          <span class="csmvs-phase__num">01</span>
+          <p class="csmvs-phase__title">Rebranding &amp; Awareness</p>
+          <p class="csmvs-phase__text">A contemporary yet culturally rooted identity - new typography, colour and motifs - carried into transit billboards, zines and social campaigns that reposition CSMVS as approachable and relevant before anyone sets foot inside.</p>
+        </div>
+        <div class="reveal" data-delay="0.12">
+          <span class="csmvs-phase__num">02</span>
+          <p class="csmvs-phase__title">Interactive Installation</p>
+          <p class="csmvs-phase__text">Gesture-tracked 3D projections let visitors handle fragile coins, vases and sculptures without touching them, while QR-based "Networks of the Past" storytelling turns isolated objects into one connected, gamified journey.</p>
+        </div>
+        <div class="reveal" data-delay="0.19">
+          <span class="csmvs-phase__num">03</span>
+          <p class="csmvs-phase__title">Decentralised Outreach</p>
+          <p class="csmvs-phase__text">Curated, tech-enabled pop-up exhibitions travel directly to college campuses - taking the interactive experience to youth who might never otherwise walk through the museum's doors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BRAND IDENTITY ── -->
+    <section class="csmvs-section csmvs-identity">
+      <span class="csmvs-eyebrow reveal">brand identity</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">A brand that carries heritage without dressing up as a symbol.</h2>
+      <p class="csmvs-body reveal" data-delay="0.1">Early research explored a wide field of heritage motifs - the museum's own Indo-Saracenic dome, the lotus, Maratha sun crests, jali lattice work. Each was rich in meaning, and each risked losing its detail the moment it was shrunk to a favicon. So the final mark went the other way: typography-driven, refined and restrained, letting the collection itself carry the symbolism instead.</p>
+
+      <div class="csmvs-logo-panel reveal" data-delay="0.1">
+        <img src="CSMVS-Images/LogoLockups.png" alt="CSMVS 101 logo lockup in black-on-cream and white-on-black">
+      </div>
+
+      <div class="csmvs-type-grid">
+        <div class="csmvs-type-card csmvs-type-card--serif reveal" data-delay="0.05">
+          <p class="csmvs-type-card__sample">Aa</p>
+          <p class="csmvs-type-card__name">PP Editorial New - Primary</p>
+          <p class="csmvs-type-card__desc">A serif with editorial restraint, echoing printed archives and manuscripts. Carries headlines and storytelling moments with an intellectual, timeless tone.</p>
+        </div>
+        <div class="csmvs-type-card csmvs-type-card--sans reveal" data-delay="0.12">
+          <p class="csmvs-type-card__sample">Aa</p>
+          <p class="csmvs-type-card__name">General Sans - Secondary</p>
+          <p class="csmvs-type-card__desc">Clean geometry as a contemporary counterbalance - used for captions, gallery information, navigation and digital interfaces where clarity matters most.</p>
+        </div>
+      </div>
+
+      <div class="csmvs-palette">
+        <div class="csmvs-swatch reveal" data-delay="0.05" style="background:#cf3d28;color:#fff;">
+          <span class="csmvs-swatch__name">Terracotta Red</span>
+          <span class="csmvs-swatch__hex">#CF3D28 - clay, excavation, discovery</span>
+        </div>
+        <div class="csmvs-swatch reveal" data-delay="0.1" style="background:#eb943b;color:#1f261c;">
+          <span class="csmvs-swatch__name">Ochre Gold</span>
+          <span class="csmvs-swatch__hex">#EB943B - metalwork, craftsmanship</span>
+        </div>
+        <div class="csmvs-swatch reveal" data-delay="0.15" style="background:#1f261c;color:#ede7d5;">
+          <span class="csmvs-swatch__name">Forest Green</span>
+          <span class="csmvs-swatch__hex">#1F261C - natural history collections</span>
+        </div>
+        <div class="csmvs-swatch reveal" data-delay="0.2" style="background:#5c0a21;color:#fff;">
+          <span class="csmvs-swatch__name">Burgundy</span>
+          <span class="csmvs-swatch__hex">#5C0A21 - sculpture, temple, ceremony</span>
+        </div>
+      </div>
+
+      <div class="csmvs-motifs-wrap">
+        <h3 class="csmvs-heading reveal" style="font-size:clamp(1.1rem,2vw,1.5rem);">Six clusters, twenty galleries.</h3>
+        <p class="csmvs-body reveal" data-delay="0.05" style="margin-bottom:1.5rem;">Rather than decorative icons, each motif is a simplified silhouette drawn from an object already inside CSMVS - organising the museum's twenty galleries into six recognisable clusters that work across signage, merchandise and the digital experience.</p>
+        <img src="CSMVS-Images/MotifsGrid.png" alt="Twelve motifs paired with the real artifacts that inspired them, from a Buddhist bronze to a temple bell to a deer specimen" class="reveal" data-delay="0.1">
+        <img src="CSMVS-Images/GalleryClusters1.png" alt="Gallery cluster diagram: Archaeology & Ancient History, and Sculpture & Stone Art" class="reveal" data-delay="0.12">
+        <img src="CSMVS-Images/GalleryClusters2.png" alt="Gallery cluster diagram: Paintings & Miniatures, Textiles & Costumes, Natural History, and Decorative Arts & Arms" class="reveal" data-delay="0.15">
+      </div>
+    </section>
+
+    <!-- ── CAMPAIGN ── -->
+    <section class="csmvs-section">
+      <span class="csmvs-eyebrow reveal">the campaign</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">Bringing the museum to where the audience already is.</h2>
+      <p class="csmvs-body reveal" data-delay="0.1">Billboards, transit posters and a national newspaper placement carry the identity into daily commutes - functioning less like advertisements and more like cultural invitations that pull curiosity outside the museum's walls.</p>
+
+      <div class="csmvs-gallery">
+        <div class="csmvs-gallery__item--wide reveal" data-delay="0.05">
+          <img src="CSMVS-Images/BillboardPhone.jpg" alt="Billboard reading 'History isn't in your phone. It's waiting for you.' featuring the Guldasta artwork by Sabyasachi Mukherjee">
+          <p class="csmvs-gallery__label">"History isn't in your phone. It's waiting for you." - transit billboard, featuring Guldasta by Sabyasachi Mukherjee</p>
+        </div>
+        <div class="csmvs-gallery__item--narrow reveal" data-delay="0.1">
+          <img src="CSMVS-Images/HeritagePoster.jpg" alt="Poster reading 'There's more than you remember. CSMVS - Heritage, Reimagined' over the museum's dome silhouette">
+          <p class="csmvs-gallery__label">"There's more than you remember." - outdoor poster</p>
+        </div>
+        <div class="csmvs-gallery__item reveal" data-delay="0.05">
+          <img src="CSMVS-Images/BillboardWall.jpg" alt="Billboard reading 'Discover what you couldn't see before. The CSMVS Digital Experience' with a scanned artifact">
+          <p class="csmvs-gallery__label">"Discover what you couldn't see before." - announcing the digital experience</p>
+        </div>
+        <div class="csmvs-gallery__item reveal" data-delay="0.1">
+          <img src="CSMVS-Images/TransitPoster.jpg" alt="Transit shelter poster reading 'Nature, held in time.'">
+          <p class="csmvs-gallery__label">"Nature, held in time." - transit shelter placement</p>
+        </div>
+        <div class="csmvs-gallery__item--narrow reveal" data-delay="0.15">
+          <img src="CSMVS-Images/NatureHeldInTime.jpg" alt="Social campaign visual for 'Nature, held in time.' combining a marble bust with a deer silhouette">
+          <p class="csmvs-gallery__label">Campaign key visual - natural history meets sculpture</p>
+        </div>
+        <div class="csmvs-gallery__item--wide reveal" data-delay="0.2">
+          <img src="CSMVS-Images/NewspaperAd.jpg" alt="CSMVS 'See beyond the surface' advertisement inside The Economic Times">
+          <p class="csmvs-gallery__label">"See beyond the surface." - full-page placement, The Economic Times</p>
+        </div>
+        <div class="csmvs-gallery__item--full reveal" data-delay="0.1">
+          <img src="CSMVS-Images/ZinePamphlet.jpg" alt="Trifold 'Events at a Glance' zine listing CSMVS workshops and talks" style="aspect-ratio:16/9;">
+          <p class="csmvs-gallery__label">"Events at a Glance" - the monthly programme zine</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EVERYDAY TOUCHPOINTS ── -->
+    <section class="csmvs-section csmvs-section--tight">
+      <span class="csmvs-eyebrow reveal">everyday touchpoints</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">The identity has to survive contact with a wallet, a backpack, a lanyard.</h2>
+      <p class="csmvs-body reveal" data-delay="0.1">Access cards double as wayfinding - Member, Staff, Student and Visitor passes each carry a different motif and colour, so the system is legible at a glance before anyone reads a word.</p>
+
+      <div class="csmvs-gallery">
+        <div class="csmvs-gallery__item--full reveal" data-delay="0.05">
+          <img src="CSMVS-Images/Lanyards.jpg" alt="Four CSMVS access lanyards for Member, Staff, Student and Visitor, each with a distinct motif and colour" style="object-fit:contain;background:#1f261c;aspect-ratio:16/8;">
+          <p class="csmvs-gallery__label">Member, Staff, Student and Visitor passes - colour and motif-coded</p>
+        </div>
+        <div class="csmvs-gallery__item reveal" data-delay="0.05">
+          <img src="CSMVS-Images/BusinessCardMockup.jpg" alt="CSMVS 101 logo lockup used on stationery, in terracotta red">
+          <p class="csmvs-gallery__label">Stationery - logo application</p>
+        </div>
+        <div class="csmvs-gallery__item reveal" data-delay="0.1">
+          <img src="CSMVS-Images/Tickets.jpg" alt="General and Student entry tickets for the CSMVS Digital Experience, priced at ₹20 and ₹0">
+          <p class="csmvs-gallery__label">General (₹20) and Student (free) entry tickets - accessibility built into pricing</p>
+        </div>
+        <div class="csmvs-gallery__item--narrow reveal" data-delay="0.15">
+          <img src="CSMVS-Images/Stickers.jpg" alt="CSMVS motif stickers on a laptop">
+          <p class="csmvs-gallery__label">Motif sticker sheet</p>
+        </div>
+        <div class="csmvs-gallery__item--narrow reveal" data-delay="0.05">
+          <img src="CSMVS-Images/ToteLifestyle.jpg" alt="Tote bag printed with the deer-and-bust motif, worn over the shoulder">
+          <p class="csmvs-gallery__label">Tote bag - merchandise</p>
+        </div>
+        <div class="csmvs-gallery__item reveal" data-delay="0.1">
+          <img src="CSMVS-Images/TshirtFront.jpg" alt="T-shirt printed with a marble bust wearing antlers, the deer-and-sculpture motif">
+          <p class="csmvs-gallery__label">T-shirt - front print</p>
+        </div>
+        <div class="csmvs-gallery__item reveal" data-delay="0.15">
+          <img src="CSMVS-Images/TshirtBack.jpg" alt="T-shirt back print showing the brand motifs in a grid">
+          <p class="csmvs-gallery__label">T-shirt - back print</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERACTIVE LAYER ── -->
+    <section class="csmvs-section">
+      <span class="csmvs-eyebrow reveal">the interactive layer</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">Making fragile history touchable, without touching it.</h2>
+      <p class="csmvs-body reveal" data-delay="0.1">The rebrand gets people through the door. What keeps them there is a change in how the collection itself is experienced - two concepts designed to work with the museum's existing infrastructure, not against it.</p>
+      <div class="csmvs-interactive">
+        <div class="csmvs-interactive__card reveal" data-delay="0.05">
+          <p class="csmvs-interactive__num">01</p>
+          <p class="csmvs-interactive__title">Gesture-tracked 3D interaction</p>
+          <p class="csmvs-interactive__text">Small, sensitive artifacts - coins, vases, sculptures - are 3D scanned and projected in large format. Gesture-tracking cameras let visitors rotate and examine the object in real time, closing the gap between viewer and artifact without putting anything valuable at risk or keeping it locked behind glass.</p>
+        </div>
+        <div class="csmvs-interactive__card reveal" data-delay="0.12">
+          <p class="csmvs-interactive__num">02</p>
+          <p class="csmvs-interactive__title">Networks of the Past - QR guide webapp</p>
+          <p class="csmvs-interactive__text">Visitors answer a few questions on arrival; the app curates a personalised route based on their interests. Scanning a QR at each display reveals an artifact's journey and its place in the network of ancient civilisations, filling in a progress map that nudges people toward corners of the museum they'd otherwise walk past.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DECENTRALISED OUTREACH ── -->
+    <section class="csmvs-section csmvs-section--tight">
+      <span class="csmvs-eyebrow reveal">decentralised outreach</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">Taking the museum to campuses that have never seen it.</h2>
+      <div class="csmvs-outreach">
+        <div class="csmvs-outreach__card reveal" data-delay="0.05">
+          <p class="csmvs-outreach__title">"Think Museum" campus pop-ups</p>
+          <p class="csmvs-outreach__text">Students work with curators to select themes and build displays using high-quality facsimiles, 3D-printed replicas and research data.</p>
+        </div>
+        <div class="csmvs-outreach__card reveal" data-delay="0.1">
+          <p class="csmvs-outreach__title">Museum on Wheels</p>
+          <p class="csmvs-outreach__text">A travelling bus carries curated exhibitions - replicas, antiquities and interactive kits - directly to a requesting campus.</p>
+        </div>
+        <div class="csmvs-outreach__card reveal" data-delay="0.15">
+          <p class="csmvs-outreach__title">Educational loan kits</p>
+          <p class="csmvs-outreach__text">Miniature exhibitions built from high-resolution graphic panels and tactile replicas that students can actually touch.</p>
+        </div>
+        <div class="csmvs-outreach__card reveal" data-delay="0.2">
+          <p class="csmvs-outreach__title">Digital image licensing</p>
+          <p class="csmvs-outreach__text">Colleges can apply for high-resolution digital scans of manuscripts from the CSMVS Research Library.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CLIENT FEEDBACK ── -->
+    <section class="csmvs-section csmvs-feedback">
+      <p class="csmvs-feedback__quote reveal">"Liked the interactive idea. Shared current resources for refreshing, and had a detailed discussion about future scope and installation of the interactive element."</p>
+      <p class="csmvs-feedback__cite reveal" data-delay="0.05">- Nikhil Ramesh, Curator, CSMVS</p>
+    </section>
+
+    <!-- ── CHALLENGES ── -->
+    <section class="csmvs-section csmvs-section--tight">
+      <span class="csmvs-eyebrow reveal">challenges we faced</span>
+      <h2 class="csmvs-heading reveal" data-delay="0.05">What made this harder than a visual refresh.</h2>
+      <div class="csmvs-challenges">
+        <div class="csmvs-challenge reveal" data-delay="0.05">
+          <p class="csmvs-challenge__title">Communication delays</p>
+          <p class="csmvs-challenge__text">Working with a government institution meant periods of one to two weeks without feedback, slowing every iteration cycle.</p>
+        </div>
+        <div class="csmvs-challenge reveal" data-delay="0.1">
+          <p class="csmvs-challenge__title">Alignment on direction</p>
+          <p class="csmvs-challenge__text">Reaching a solution that satisfied both institutional expectations and contemporary audience needs took multiple rounds.</p>
+        </div>
+        <div class="csmvs-challenge reveal" data-delay="0.15">
+          <p class="csmvs-challenge__title">Branding vs. experience</p>
+          <p class="csmvs-challenge__text">It became clear early on that a purely visual rebrand wouldn't solve the core issue - the interactive layer was necessary, not optional.</p>
+        </div>
+        <div class="csmvs-challenge reveal" data-delay="0.2">
+          <p class="csmvs-challenge__title">Defining the audience</p>
+          <p class="csmvs-challenge__text">We explored several audience groups before narrowing focus to digitally native youth as the primary lens for every decision.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── IMPACT / SDG ── -->
+    <section class="csmvs-section csmvs-impact">
+      <span class="csmvs-eyebrow reveal">impact - sdg 11</span>
+      <h2 class="csmvs-impact__heading reveal" data-delay="0.05">Sustainable Cities and Communities</h2>
+      <p class="csmvs-impact__text reveal" data-delay="0.1">By combining a refreshed identity, storytelling-led campaigns and interactive technology, the solution repositions CSMVS as a living cultural presence rather than a static archive - strengthening cultural engagement so heritage keeps being experienced, not just preserved, by the generations that come after.</p>
+    </section>
+
+    <!-- ── WHAT SHAPED THIS PROJECT ── -->
+    <section class="csmvs-section">
+      <span class="csmvs-shaped__bar reveal">What shaped this project?</span>
+      <div class="csmvs-shaped__keywords reveal" data-delay="0.1">
+        <span class="csmvs-kw">
+          <span class="csmvs-kw__p">Rooted</span>
+          <span class="csmvs-kw__e">heritage</span>
+        </span>
+        <span class="csmvs-kw__dot">●</span>
+        <span class="csmvs-kw">
+          <span class="csmvs-kw__e">digitally</span>
+          <span class="csmvs-kw__p">native youth</span>
+        </span>
+        <span class="csmvs-kw__dot">●</span>
+        <span class="csmvs-kw">
+          <span class="csmvs-kw__p">Access,</span>
+          <span class="csmvs-kw__e">without risk</span>
+        </span>
+        <span class="csmvs-kw__dot">●</span>
+        <span class="csmvs-kw">
+          <span class="csmvs-kw__e">gamified</span>
+          <span class="csmvs-kw__p">storytelling</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- ── CREDITS ── -->
+    <section class="csmvs-section csmvs-section--tight">
+      <div class="csmvs-credits reveal">
+        <div>
+          <span class="csmvs-credit__label">Design team</span>
+          <span class="csmvs-credit__value">Kashish Shah, Aryan Jamdar, Siddh Jhala</span>
+        </div>
+        <div>
+          <span class="csmvs-credit__label">Faculty</span>
+          <span class="csmvs-credit__value">Yogesh Jahagirdhar</span>
+        </div>
+        <div>
+          <span class="csmvs-credit__label">Curator</span>
+          <span class="csmvs-credit__value">Nikhil Ramesh, CSMVS</span>
+        </div>
+        <div>
+          <span class="csmvs-credit__label">Course</span>
+          <span class="csmvs-credit__value">Collaborative Studio (Design for SDGs), ATLAS ISDI</span>
+        </div>
+      </div>
+      <div class="csmvs-brandbook-cta reveal" data-delay="0.05">
+        <a href="CSMVS-Images/CSMVS-Brand-Book.pdf" target="_blank" rel="noopener noreferrer" class="csmvs-brandbook-cta__btn">Read the full brand book (PDF) →</a>
+      </div>
+    </section>
+
+    <div style="border-top:1px solid var(--t10);">
+      <a href="../motion-graphic/" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:clamp(2rem,4vw,3.5rem) clamp(2rem,7vw,6rem);transition:padding-left 0.35s cubic-bezier(0.16,1,0.3,1);"
+         onmouseover="this.style.paddingLeft='calc(clamp(2rem,7vw,6rem) + 1rem)'"
+         onmouseout="this.style.paddingLeft='clamp(2rem,7vw,6rem)'">
+        <div>
+          <p style="font-size:0.625rem;font-weight:300;letter-spacing:0.1em;color:var(--t40);margin-bottom:0.5rem;">next</p>
+          <p style="font-size:clamp(1rem,2vw,1.75rem);font-weight:300;letter-spacing:-0.05em;color:var(--t60);">motion graphic</p>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <p class="footer__brand">the kashish way</p>
+      <p class="footer__tagline">communication design rooted in culture, craft, and curiosity.</p>
+      <p class="footer__copy">© 2025 kashish shah. all rights reserved.</p>
+    </div>
+    <div class="footer__right">
+      <nav class="footer__nav">
+        <a href="../../work/">work</a>
+        <a href="../../gallery/">gallery</a>
+        <a href="../../blogs/">my notebook</a>
+        <a href="../../about/">who am i?</a>
+        <a href="../../contact/">let's talk!</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.behance.net/kashishshah23" target="_blank" rel="noopener noreferrer">behance</a>
+        <a href="https://www.instagram.com/kashishshahdesign/" target="_blank" rel="noopener noreferrer">instagram</a>
+        <a href="https://www.linkedin.com/in/kashish-shah-graphic-designer/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

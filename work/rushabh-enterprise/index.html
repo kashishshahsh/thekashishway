@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rushabh enterprise - the kashish way</title>
+  <meta name="description" content="rushabh enterprise - an end-to-end brand identity for a precision engineering exporter in Rajkot: logo, colour system, catalogue design, and the export-facing website that carries it online.">
+  <meta name="theme-color" content="#383f28">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body { text-transform: none; }
+
+    :root {
+      --rush-green:      #383f28;
+      --rush-terracotta: #9b4622;
+      --rush-brown:      #7e654a;
+      --rush-cream:      #e4d7c7;
+      --rush-display:    'Space Grotesk', sans-serif;
+      --rush-body:       'General Sans', 'Poppins', sans-serif;
+    }
+
+    /* ── HERO ── */
+    .rush-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: calc(clamp(1.25rem, 2.5vw, 1.75rem) * 2 + 3rem) var(--pad-x) clamp(2.5rem, 5vw, 4rem);
+      overflow: hidden;
+    }
+    .rush-hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+    .rush-hero__scrim {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(20,24,14,0.3) 0%, rgba(20,24,14,0.55) 55%, rgba(15,18,11,0.94) 100%);
+      z-index: -1;
+    }
+    .rush-eyebrow {
+      font-family: var(--rush-body);
+      font-weight: 500;
+      font-size: clamp(0.7rem, 1vw, 0.85rem);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rush-cream);
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+      display: block;
+    }
+    .rush-hero__heading {
+      font-family: var(--rush-display);
+      font-weight: 600;
+      font-size: clamp(2.25rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+    .rush-hero__meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 2rem);
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+    .rush-hero__meta-label {
+      display: block;
+      font-family: var(--rush-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.4rem;
+    }
+    .rush-hero__meta-value {
+      font-family: var(--rush-body);
+      font-weight: 400;
+      font-size: clamp(0.75rem, 1vw, 0.95rem);
+      color: #fff;
+      line-height: 1.4;
+    }
+    .rush-hero__meta-value a { color: var(--rush-cream); text-decoration: underline; text-underline-offset: 3px; }
+    .rush-hero__meta-value a:hover { color: #fff; }
+
+    /* ── SHARED ── */
+    .rush-section { padding: clamp(3.5rem, 7vw, 6.5rem) var(--pad-x); }
+    .rush-section--tight { padding-top: 0; }
+    .rush-heading {
+      font-family: var(--rush-display);
+      font-weight: 600;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      max-width: 26ch;
+      margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    }
+    .rush-body {
+      font-family: var(--rush-body);
+      font-weight: 400;
+      font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+      line-height: 1.75;
+      color: var(--t60);
+      max-width: 62ch;
+    }
+    .rush-body + .rush-body { margin-top: 1.1em; }
+
+    /* ── STATS ── */
+    .rush-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      border-top: 1px solid var(--t10);
+      border-bottom: 1px solid var(--t10);
+      padding: clamp(2rem, 4vw, 3rem) 0;
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+    }
+    .rush-stat__num {
+      font-family: var(--rush-display);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      color: var(--rush-terracotta);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .rush-stat__label {
+      font-family: var(--rush-body);
+      font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+      color: var(--t40);
+      line-height: 1.4;
+    }
+
+    /* ── PHILOSOPHY / LOGO ── */
+    .rush-logo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .rush-logo-card {
+      aspect-ratio: 4/3;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 4vw, 3rem);
+    }
+    .rush-logo-card img { width: 100%; max-width: 220px; height: auto; }
+    .rush-logo-card--cream { background: var(--rush-cream); }
+    .rush-logo-card--green { background: var(--rush-green); }
+    .rush-logo-note {
+      font-family: var(--rush-body);
+      font-size: 0.8rem;
+      color: var(--t40);
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* ── COLOUR PALETTE ── */
+    .rush-palette {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .rush-swatch__block { aspect-ratio: 1; border-radius: 10px; margin-bottom: 1rem; }
+    .rush-swatch__name {
+      font-family: var(--rush-body);
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .rush-swatch__hex {
+      font-family: var(--rush-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--t40);
+      text-transform: uppercase;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .rush-type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .rush-type-card { background: var(--t06); border-radius: 10px; padding: clamp(1.75rem, 3vw, 2.5rem); }
+    .rush-type-card__label {
+      font-family: var(--rush-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rush-terracotta);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .rush-type-card__sample-display {
+      font-family: var(--rush-display);
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .rush-type-card__sample-body {
+      font-family: var(--rush-body);
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    .rush-type-card__meta { font-family: var(--rush-body); font-size: 0.8rem; color: var(--t40); }
+
+    /* ── CATALOGUE SPREADS ── */
+    .rush-spread-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.25rem, 2.5vw, 2rem);
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .rush-spread {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+    .rush-spread img { width: 100%; display: block; }
+    .rush-spread--full { grid-column: 1 / -1; }
+    .rush-spread-caption {
+      font-family: var(--rush-body);
+      font-size: 0.8rem;
+      color: var(--t40);
+      margin-top: 0.6rem;
+    }
+
+    /* ── PRODUCT RANGE ── */
+    .rush-products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1rem, 2vw, 1.5rem);
+      margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    .rush-product-card { border-radius: 8px; overflow: hidden; background: var(--t06); }
+    .rush-product-card__img { aspect-ratio: 1; overflow: hidden; }
+    .rush-product-card__img img { width: 100%; height: 100%; object-fit: cover; }
+    .rush-product-card__label {
+      font-family: var(--rush-body);
+      font-weight: 500;
+      font-size: 0.8rem;
+      color: var(--text);
+      padding: 0.85rem 1rem;
+    }
+
+    /* ── WEBSITE SECTION ── */
+    .rush-web {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+    .rush-web__img { border-radius: 10px; overflow: hidden; }
+    .rush-web__img img { width: 100%; display: block; }
+    .rush-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: clamp(1.5rem, 3vw, 2rem);
+      font-family: var(--rush-body);
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--rush-cream);
+      background: var(--rush-terracotta);
+      border-radius: 30px;
+      padding: 0.8rem 1.5rem;
+      text-decoration: none;
+      transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+    }
+    .rush-cta:hover { background: var(--rush-green); transform: translateY(-2px); }
+
+    .rush-standards {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: clamp(2rem, 4vw, 3rem);
+      font-family: var(--rush-body);
+    }
+    .rush-standards th, .rush-standards td {
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--t10);
+      font-size: 0.85rem;
+    }
+    .rush-standards th { color: var(--t40); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .rush-standards td { color: var(--t60); }
+    .rush-standards td:first-child { color: var(--text); font-weight: 500; }
+
+    /* ── WHAT SHAPED THIS PROJECT ── */
+    .rush-shaped {
+      padding: clamp(4rem, 8vw, 7rem) var(--pad-x);
+      text-align: center;
+      border-top: 1px solid var(--t10);
+    }
+    .rush-shaped__bar {
+      display: block;
+      font-family: var(--rush-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--t40);
+      margin-bottom: clamp(2rem, 4vw, 3rem);
+    }
+    .rush-shaped__keywords {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1rem, 2.5vw, 2rem);
+    }
+    .rush-kw { display: flex; flex-direction: column; align-items: center; line-height: 1.05; }
+    .rush-kw__p {
+      font-family: 'adobe-handwriting-ernie', cursive;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--rush-terracotta);
+    }
+    .rush-kw__e {
+      font-family: 'adobe-handwriting-ernie', cursive;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--text);
+    }
+    .rush-kw__dot { color: var(--t20); font-size: 0.6rem; align-self: center; }
+
+    @media (max-width: 900px) {
+      .rush-hero__meta { grid-template-columns: repeat(2, 1fr); row-gap: 1.5rem; }
+      .rush-stats { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+      .rush-logo-grid, .rush-type-grid, .rush-spread-grid, .rush-web { grid-template-columns: 1fr; }
+      .rush-palette { grid-template-columns: repeat(2, 1fr); }
+      .rush-products { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">skip to content</a>
+
+  <header id="nav" class="nav is-visible" role="banner">
+    <a href="../../" class="nav__brand">the kashish way</a>
+    <nav class="nav__links" aria-label="main navigation">
+      <a href="../../work/"    class="nav__link is-active">work</a>
+      <a href="../../gallery/" class="nav__link">gallery</a>
+      <a href="../../blogs/"   class="nav__link">my notebook</a>
+      <a href="../../about/"   class="nav__link">who am i?</a>
+      <a href="../../contact/" class="nav__link">let's talk!</a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle"
+            aria-label="open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="nav-drawer" class="nav__drawer" aria-label="mobile navigation">
+    <a href="../../work/"    class="nav__link">work</a>
+    <a href="../../gallery/" class="nav__link">gallery</a>
+    <a href="../../blogs/"   class="nav__link">my notebook</a>
+    <a href="../../about/"   class="nav__link">who am i?</a>
+    <a href="../../contact/" class="nav__link">let's talk!</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="rush-hero">
+      <img src="RE-Images/hero-warehouse.jpg" alt="Rushabh Enterprise export warehouse, Rajkot" class="rush-hero__bg">
+      <div class="rush-hero__scrim"></div>
+      <span class="rush-eyebrow reveal">case study - brand identity &amp; export design</span>
+      <h1 class="rush-hero__heading reveal" data-delay="0.05">rushabh enterprise.</h1>
+      <div class="rush-hero__meta reveal" data-delay="0.1">
+        <div>
+          <span class="rush-hero__meta-label">Role</span>
+          <span class="rush-hero__meta-value">Brand identity, catalogue design &amp; web design</span>
+        </div>
+        <div>
+          <span class="rush-hero__meta-label">Sector</span>
+          <span class="rush-hero__meta-value">Precision industrial engineering, export</span>
+        </div>
+        <div>
+          <span class="rush-hero__meta-label">Base</span>
+          <span class="rush-hero__meta-value">Rajkot, Gujarat, India</span>
+        </div>
+        <div>
+          <span class="rush-hero__meta-label">Live site</span>
+          <span class="rush-hero__meta-value"><a href="https://rushabhexports.com" target="_blank" rel="noopener noreferrer">rushabhexports.com →</a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brief -->
+    <section class="rush-section">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">the brief</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">A Rajkot workshop that manufactures to a named standard, needed a brand that could say so.</h2>
+      <div class="rush-body reveal" data-delay="0.1">
+        <p>Rushabh Enterprise manufactures precision lubrication and fastening components, grease nipples, grease nipple caps, oil cups, grease cups, aluminium oil level indicators, industrial nylon knobs, and copper rivets, from a single integrated facility in Rajkot, one of India's foremost precision engineering hubs.</p>
+        <p>The manufacturing was already exact: every fitting machined to a named thread standard (DIN 71412, BS 1486, SAE J534), every batch lot-tracked and dimensionally inspected. What the business lacked was a visual identity that communicated that precision before a buyer ever placed an order, and a catalogue system that let an overseas procurement team qualify the company at a glance, not a phone call.</p>
+      </div>
+      <div class="rush-stats reveal" data-delay="0.15">
+        <div><span class="rush-stat__num">7</span><span class="rush-stat__label">product lines, one facility</span></div>
+        <div><span class="rush-stat__num">3</span><span class="rush-stat__label">thread standards served</span></div>
+        <div><span class="rush-stat__num">21-day</span><span class="rush-stat__label">lead time, FOB Mundra</span></div>
+        <div><span class="rush-stat__num">100%</span><span class="rush-stat__label">batch-documented</span></div>
+      </div>
+    </section>
+
+    <!-- Philosophy / Logo -->
+    <section class="rush-section rush-section--tight">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">the philosophy</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">Kalpavriksha - growth, continuity, abundance.</h2>
+      <div class="rush-body reveal" data-delay="0.1">
+        <p>The name and mark are built around Kalpavriksha, the wish-fulfilling tree of life in Jain philosophy, a symbol of growth that is patient rather than forced. The logo reads as a single seed-like form, but its centre opens into two mirrored roots curling inward: continuity built from the ground up, the same principle behind a company that grew from one Rajkot workshop into a seven-line manufacturer without ever changing what it stood for.</p>
+      </div>
+      <div class="rush-logo-grid reveal" data-delay="0.15">
+        <div>
+          <div class="rush-logo-card rush-logo-card--cream">
+            <img src="RE-Images/logo-black.png" alt="Rushabh Enterprise logo, dark mark on cream">
+          </div>
+          <p class="rush-logo-note">On light backgrounds</p>
+        </div>
+        <div>
+          <div class="rush-logo-card rush-logo-card--green">
+            <img src="RE-Images/logo-white.png" alt="Rushabh Enterprise logo, white mark on deep olive">
+          </div>
+          <p class="rush-logo-note">On dark backgrounds</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Colour Palette -->
+    <section class="rush-section rush-section--tight">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">brand identity</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">A palette pulled from soil, metal, and rust, not a swatch book.</h2>
+      <div class="rush-body reveal" data-delay="0.1">
+        <p>Deep olive grounds the mark the way iron tools weather into a workshop floor. Terracotta and brown carry the warmth of raw material and rust, precision engineering's actual palette, long before it's machined smooth. Cream keeps every application legible on paper, packaging, or screen.</p>
+      </div>
+      <div class="rush-palette reveal" data-delay="0.15">
+        <div>
+          <div class="rush-swatch__block" style="background:#383f28;"></div>
+          <p class="rush-swatch__name">Deep Olive</p>
+          <p class="rush-swatch__hex">#383F28</p>
+        </div>
+        <div>
+          <div class="rush-swatch__block" style="background:#9b4622;"></div>
+          <p class="rush-swatch__name">Terracotta</p>
+          <p class="rush-swatch__hex">#9B4622</p>
+        </div>
+        <div>
+          <div class="rush-swatch__block" style="background:#7e654a;"></div>
+          <p class="rush-swatch__name">Warm Brown</p>
+          <p class="rush-swatch__hex">#7E654A</p>
+        </div>
+        <div>
+          <div class="rush-swatch__block" style="background:#e4d7c7;"></div>
+          <p class="rush-swatch__name">Parchment Cream</p>
+          <p class="rush-swatch__hex">#E4D7C7</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="rush-section rush-section--tight">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">brand identity</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">A display face for confidence, a body face for the fine print that actually matters.</h2>
+      <div class="rush-body reveal" data-delay="0.1">
+        <p>Headers carry a bold geometric display face for the same reason a spec sheet leads with the standard, not the disclaimer. Body copy runs in General Sans, a clean grotesque built to stay legible at the small sizes a thread-size table or tolerance spec demands.</p>
+      </div>
+      <div class="rush-type-grid reveal" data-delay="0.15">
+        <div class="rush-type-card">
+          <span class="rush-type-card__label">Header - Space Grotesk</span>
+          <p class="rush-type-card__sample-display">Aa</p>
+          <p class="rush-type-card__meta">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789</p>
+        </div>
+        <div class="rush-type-card">
+          <span class="rush-type-card__label">Body - General Sans</span>
+          <p class="rush-type-card__sample-body">Aa</p>
+          <p class="rush-type-card__meta">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogue Design -->
+    <section class="rush-section">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">the catalogue</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">One page template, engineered like the parts it describes.</h2>
+      <div class="rush-body reveal" data-delay="0.1">
+        <p>Every product spread runs the same system: a full-bleed application photograph, a line-drawn technical icon, a specification table, and the industries the part actually serves, so a buyer scanning a hundred-page catalogue can qualify a component in seconds, without a call to the export desk.</p>
+      </div>
+      <div class="rush-spread-grid reveal" data-delay="0.15">
+        <div>
+          <div class="rush-spread"><img src="RE-Images/spread-angled-nipple.jpg" alt="Catalogue spread for the 45 degree angled grease nipple, showing specification and application"></div>
+          <p class="rush-spread-caption">45° angled grease nipple - full specification spread</p>
+        </div>
+        <div>
+          <div class="rush-spread"><img src="RE-Images/spread-nylon-knob.jpg" alt="Catalogue spread for the industrial nylon knob, showing specification and application"></div>
+          <p class="rush-spread-caption">Industrial nylon knob - full specification spread</p>
+        </div>
+        <div class="rush-spread--full">
+          <div class="rush-spread"><img src="RE-Images/spread-copper-rivets.jpg" alt="Copper rivets in use across aerospace, marine, automotive, and architectural applications"></div>
+          <p class="rush-spread-caption">Copper rivets - cross-industry application grid</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Range -->
+    <section class="rush-section rush-section--tight">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">the range</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">Seven product lines, photographed as one family.</h2>
+      <div class="rush-body reveal" data-delay="0.1">
+        <p>From the flagship grease nipple cap to solid copper rivets, every line was shot and framed consistently, so the range reads as a single manufacturer's catalogue rather than seven disconnected products.</p>
+      </div>
+      <div class="rush-products reveal" data-delay="0.15">
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/grease-nipple-caps-1.jpg" alt="Grease nipple cap, flagship product"></div>
+          <p class="rush-product-card__label">Grease Nipple Caps</p>
+        </div>
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/grease-nipples-straight.jpg" alt="Straight grease nipple"></div>
+          <p class="rush-product-card__label">Grease Nipples</p>
+        </div>
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/oil-cups-1.jpg" alt="Oil cup"></div>
+          <p class="rush-product-card__label">Oil Cups</p>
+        </div>
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/grease-cups-1.jpg" alt="Grease cup"></div>
+          <p class="rush-product-card__label">Grease Cups</p>
+        </div>
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/oil-level-indicators-1.jpg" alt="Aluminium oil level indicator"></div>
+          <p class="rush-product-card__label">Oil Level Indicators</p>
+        </div>
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/nylon-knobs-1.jpg" alt="Industrial nylon knob"></div>
+          <p class="rush-product-card__label">Industrial Nylon Knobs</p>
+        </div>
+        <div class="rush-product-card">
+          <div class="rush-product-card__img"><img src="RE-Images/copper-rivets-1.jpg" alt="Copper rivets"></div>
+          <p class="rush-product-card__label">Copper Rivets</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Website -->
+    <section class="rush-section">
+      <span class="rush-eyebrow reveal" style="color:var(--rush-terracotta);">the website</span>
+      <h2 class="rush-heading reveal" data-delay="0.05">An export desk that never closes.</h2>
+      <div class="rush-web reveal" data-delay="0.1">
+        <div>
+          <p class="rush-body">The identity carries onto an export-facing website built for the buyer who is qualifying Rushabh from another continent: full specification pages per product, a quality standards reference cross-checked against the thread standard their own engineers already use, and a direct line to the export desk, no distributor, no reseller markup.</p>
+          <a class="rush-cta" href="https://rushabhexports.com" target="_blank" rel="noopener noreferrer">Visit rushabhexports.com →</a>
+          <table class="rush-standards">
+            <thead>
+              <tr><th>Standard</th><th>Origin</th><th>Thread type</th><th>Primary markets</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>DIN 71412</td><td>Germany</td><td>Metric parallel</td><td>Europe &amp; India</td></tr>
+              <tr><td>BS 1486</td><td>United Kingdom</td><td>BSP taper</td><td>UK, Middle East, Commonwealth</td></tr>
+              <tr><td>SAE J534</td><td>USA</td><td>NPT taper</td><td>North America</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rush-web__img">
+          <img src="RE-Images/grease-nipple-caps-3.jpg" alt="Grease nipple cap product photography, in-context">
+        </div>
+      </div>
+    </section>
+
+    <!-- What shaped this project -->
+    <section class="rush-shaped">
+      <span class="rush-shaped__bar reveal">What shaped this project?</span>
+      <div class="rush-shaped__keywords reveal" data-delay="0.1">
+        <span class="rush-kw">
+          <span class="rush-kw__p">Rooted</span>
+          <span class="rush-kw__e">growth</span>
+        </span>
+        <span class="rush-kw__dot">●</span>
+        <span class="rush-kw">
+          <span class="rush-kw__e">named</span>
+          <span class="rush-kw__p">standards</span>
+        </span>
+        <span class="rush-kw__dot">●</span>
+        <span class="rush-kw">
+          <span class="rush-kw__p">Export</span>
+          <span class="rush-kw__e">trust</span>
+        </span>
+        <span class="rush-kw__dot">●</span>
+        <span class="rush-kw">
+          <span class="rush-kw__e">workshop</span>
+          <span class="rush-kw__p">craft</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- Next project -->
+    <div style="border-top:1px solid var(--t10);">
+      <a href="../oreo/" style="display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:clamp(2rem,4vw,3.5rem) clamp(2rem,7vw,6rem);transition:padding-left 0.35s cubic-bezier(0.16,1,0.3,1);"
+         onmouseover="this.style.paddingLeft='calc(clamp(2rem,7vw,6rem) + 1rem)'"
+         onmouseout="this.style.paddingLeft='clamp(2rem,7vw,6rem)'">
+        <div>
+          <p style="font-size:0.625rem;font-weight:300;letter-spacing:0.1em;color:var(--t40);margin-bottom:0.5rem;">next</p>
+          <p style="font-size:clamp(1rem,2vw,1.75rem);font-weight:300;letter-spacing:-0.05em;color:var(--t60);">oreo</p>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <p class="footer__brand">the kashish way</p>
+      <p class="footer__tagline">communication design rooted in culture, craft, and curiosity.</p>
+      <p class="footer__copy">© 2025 kashish shah. all rights reserved.</p>
+    </div>
+    <div class="footer__right">
+      <nav class="footer__nav">
+        <a href="../../work/">work</a>
+        <a href="../../gallery/">gallery</a>
+        <a href="../../blogs/">my notebook</a>
+        <a href="../../about/">who am i?</a>
+        <a href="../../contact/">let's talk!</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.behance.net/kashishshah23" target="_blank" rel="noopener noreferrer">behance</a>
+        <a href="https://www.instagram.com/kashishshahdesign/" target="_blank" rel="noopener noreferrer">instagram</a>
+        <a href="https://www.linkedin.com/in/kashish-shah-graphic-designer/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

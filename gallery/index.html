@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gallery - the kashish way</title>
+  <meta name="description" content="a visual gallery of the things kashish keeps coming back to - craft photography, editorial design, colour, and the odd portrait.">
+  <meta name="theme-color" content="#0b1318">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .gallery-hero {
+      padding: calc(clamp(1.25rem, 2.5vw, 1.75rem) * 2 + 4rem) var(--pad-x) clamp(2.5rem, 5vw, 4rem);
+    }
+    .gallery-hero__label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .gallery-hero__title {
+      font-size: clamp(1.1rem, 3.6vw, 3rem);
+      font-weight: 300;
+      letter-spacing: var(--track);
+      line-height: 1.15;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .gallery-hero__text {
+      margin-top: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-size: clamp(0.85rem, 1.1vw, 1rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--t60);
+      max-width: 46ch;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+
+    .gallery-grid {
+      column-count: 2;
+      column-gap: clamp(0.6rem, 1.2vw, 1rem);
+      padding: 0 var(--pad-x) clamp(4rem, 8vw, 6rem);
+    }
+    @media (min-width: 700px)  { .gallery-grid { column-count: 3; } }
+    @media (min-width: 1100px) { .gallery-grid { column-count: 4; } }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: clamp(0.6rem, 1.2vw, 1rem);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s var(--ease-out);
+    }
+    .gallery-item:hover img { transform: scale(1.035); }
+
+    .gallery-footer-link {
+      display: block;
+      text-align: center;
+      padding: 0 var(--pad-x) clamp(4rem, 8vw, 6rem);
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--t40);
+    }
+    .gallery-footer-link a { color: var(--t60); text-decoration: underline; text-underline-offset: 3px; }
+    .gallery-footer-link a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">skip to content</a>
+
+  <header id="nav" class="nav is-visible" role="banner">
+    <a href="../" class="nav__brand">the kashish way</a>
+    <nav class="nav__links" aria-label="main navigation">
+      <a href="../work/"    class="nav__link">work</a>
+      <a href="../gallery/" class="nav__link is-active">gallery</a>
+      <a href="../blogs/"   class="nav__link">my notebook</a>
+      <a href="../about/"   class="nav__link">who am i?</a>
+      <a href="../contact/" class="nav__link">let's talk!</a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle"
+            aria-label="open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="nav-drawer" class="nav__drawer" aria-label="mobile navigation">
+    <a href="../work/"    class="nav__link">work</a>
+    <a href="../gallery/" class="nav__link">gallery</a>
+    <a href="../blogs/"   class="nav__link">my notebook</a>
+    <a href="../about/"   class="nav__link">who am i?</a>
+    <a href="../contact/" class="nav__link">let's talk!</a>
+  </nav>
+
+  <main id="main">
+
+    <section class="gallery-hero">
+      <span class="gallery-hero__label reveal">gallery</span>
+      <h1 class="gallery-hero__title reveal" data-delay="0.05">things i keep coming back to.</h1>
+      <p class="gallery-hero__text reveal" data-delay="0.1">Not case studies, just the images: pulled from shoots, process folders, and experiments across every project on this site, over four years. Craft photography, colour, typography, portraits, and the odd moodboard. If there's a thread through my work, it's in here.</p>
+    </section>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-rivsm4.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-riv3.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-timex6.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-rivsm25.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-kneeasset11.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-oreoc2.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-rivsm3.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-typo6.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mb7.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-timex10.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/bp1.jpg" alt="Beyond Preservation book open on a teal background, camel headdress photograph" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-knee1.jpg" alt="Knee Talks filler design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-brandvid3.jpg" alt="brand video asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/mb2.jpg" alt="Midnight Blue editorial spread, 'what does midnight blue feel like?'" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-mbup22.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-mb8.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/bp4.jpg" alt="Beyond Preservation book, pop-up bell illustration in dark red" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bp4.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-oreo3.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-mbup3.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-csmvs10.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-port7.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bpint2.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-riv9.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreoc3.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-oreo6.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/mb1.jpg" alt="Midnight Blue editorial mockup, Instagram quote card" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kinetic7.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-google4.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-rivsm6.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-typo5.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/bp6.jpg" alt="Beyond Preservation book, Ajrakh motif fold-out star map" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bpbg1.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-rivsm1.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-mb3.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-csmvs2.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bpbg5.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-nt6.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-kneeasset10.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-bpbg2.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-timex12.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-timex7.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-knee4.jpg" alt="Knee Talks filler design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/mb3.jpg" alt="A Dreamy Hue book cover mockup, navy blue" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/bp3.jpg" alt="Beyond Preservation book cover with mirror-work detailing" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-riv11.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-oreoc1.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-nt3.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-nt7.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-csmvs9.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-ntlogo2.jpg" alt="Nineteen Twentys logo lockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kinetic4.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-ntlogo3.jpg" alt="Nineteen Twentys logo lockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-mb1.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-timex15.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/timex3.jpg" alt="Portrait, Timex Eyewear shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mbup6.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-knee2.jpg" alt="Knee Talks filler design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-google5.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/bp2.jpg" alt="Beyond Preservation book cover, standing, on a blush background" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreomock8.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/timex2.jpg" alt="Portrait, Timex Eyewear shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-port8.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-riv10.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-typo8.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-mbup23.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-typo2.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-ntlogo1.jpg" alt="Nineteen Twentys logo lockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreomock5.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-riv5.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-brandvid5.jpg" alt="brand video asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-knee6.jpg" alt="Knee Talks filler design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-rivsm21.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-kinetic1.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-mbup4.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-mbup2.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bpint4.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bp2.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/timex5.jpg" alt="Portrait, Timex Eyewear shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kneeasset1.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreomock7.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-port6.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-timex11.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-bpbg3.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mb9.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-rivsm5.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-csmvs7.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-nish2.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-rivmg1.jpg" alt="Rivesa motion graphic asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bpint5.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-port1.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-mbup25.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mbup1.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-brandvid1.jpg" alt="brand video asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bpint8.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-riv6.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mbup24.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bpint6.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-google2.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-knee5.jpg" alt="Knee Talks filler design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-timex9.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-google3.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-csmvs4.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-csmvs8.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bindi4.jpg" alt="Bindi documentary still" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-nt2.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bp10.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kneeasset8.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mbup5.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-rivsm24.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-oreomock4.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-csmvs1.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/nt1.jpg" alt="Nineteen Twentys moodboard, art deco grid" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-csmvs3.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-riv2.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kneeasset7.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-port5.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-port4.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-oreomock10.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-typo1.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreomock2.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bindi3.jpg" alt="Bindi documentary still" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bpbg7.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-oreo1.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-google1.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-mbup7.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-riv7.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kinetic5.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-mb6.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-brandvid2.jpg" alt="brand video asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-typo7.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-rivsm2.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bp1.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-timex14.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-rivsm26.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-nish3.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-nish7.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-riv14.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-nish6.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-mb4.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreomock1.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-oreo4.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bp8.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kneeasset4.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-brandvid6.jpg" alt="brand video asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-nt4.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-timex4.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-brandvid4.jpg" alt="brand video asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/bp8.jpg" alt="Beyond Preservation book, contents and introduction spread" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-rivsm22.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bpint7.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-nish5.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-nt5.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bpint1.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bp3.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-port2.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-riv4.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bpbg4.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-mb5.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/bp5.jpg" alt="Beyond Preservation book, spine and cover detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-timex13.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-typo4.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-nish1.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-nish4.jpg" alt="Nishkaam Behance case study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bp7.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-port3.jpg" alt="portfolio design asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-kneeasset6.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-typo3.jpg" alt="typography study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-google6.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-kneeasset5.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-riv12.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-oreomock6.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-google7.jpg" alt="Google pitch deck visual" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-kneeasset9.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-riv13.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/timex1.jpg" alt="Portrait, Timex Eyewear shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-nt1.jpg" alt="Nineteen Twentys brand asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-kinetic2.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-mb2.jpg" alt="A Dreamy Hue, midnight blue publication" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-timex2.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-csmvs5.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-kneeasset12.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-oreomock9.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-oreo5.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-knee3.jpg" alt="Knee Talks filler design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-rivsm23.jpg" alt="Rivesa social media design" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bpint3.jpg" alt="Beyond Preservation, interactive book detail" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-bindi2.jpg" alt="Bindi documentary still" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-kinetic6.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-mbup21.jpg" alt="A Dreamy Hue, Behance upload" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-timex5.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-timex1.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-bp6.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/uri1.jpg" alt="Urimate packaging, pink and yellow logo with mascot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/bp7.jpg" alt="Beyond Preservation book open to the Rogan Kala chapter, hot pink background" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-csmvs6.jpg" alt="CSMVS campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-kinetic3.jpg" alt="Kinetic type motion study" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bp5.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-bpbg6.jpg" alt="Beyond Preservation, cutout asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-bindi1.jpg" alt="Bindi documentary still" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-oreomock3.jpg" alt="Oreo rebrand mockup" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-bp9.jpg" alt="Beyond Preservation, craft book photography" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-kneeasset2.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-riv8.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/g-timex3.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-timex8.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-timex16.jpg" alt="Timex Eyewear shoot, portrait" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.08"><img src="Gallery-Images/g-kneeasset3.jpg" alt="Knee Talks campaign asset" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.02"><img src="Gallery-Images/timex4.jpg" alt="Portrait, Timex Eyewear shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.04"><img src="Gallery-Images/g-riv1.jpg" alt="Rivesa brand shoot" loading="lazy"></div>
+      <div class="gallery-item reveal" data-delay="0.06"><img src="Gallery-Images/g-oreo2.jpg" alt="Oreo rebrand concept" loading="lazy"></div>
+    </div>
+
+    <p class="gallery-footer-link reveal">Want the full story behind any of these? <a href="../work/">See the case studies →</a></p>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <p class="footer__brand">the kashish way</p>
+      <p class="footer__tagline">communication design rooted in culture, craft, and curiosity.</p>
+      <p class="footer__copy">© 2025 kashish shah. all rights reserved.</p>
+    </div>
+    <div class="footer__right">
+      <nav class="footer__nav">
+        <a href="../work/">work</a>
+        <a href="../gallery/">gallery</a>
+        <a href="../blogs/">my notebook</a>
+        <a href="../about/">who am i?</a>
+        <a href="../contact/">let's talk!</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.behance.net/kashishshah23" target="_blank" rel="noopener noreferrer">behance</a>
+        <a href="https://www.instagram.com/kashishshahdesign/" target="_blank" rel="noopener noreferrer">instagram</a>
+        <a href="https://www.linkedin.com/in/kashish-shah-graphic-designer/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

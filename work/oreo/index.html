@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oreo — the kashish way</title>
+  <meta name="description" content="Oreo rebranding — how can a brand that shaped our childhood remain relevant to a generation reshaping itself?">
+  <meta name="theme-color" content="#0b1318">
+  <link rel="stylesheet" href="https://use.typekit.net/vcy1zir.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    body { text-transform: none; }
+
+    /* ── Hero ── */
+    .oreo-hero {
+      padding: calc(clamp(1.25rem,2.5vw,1.75rem)*2 + 5rem) var(--pad-x) clamp(3rem,5vw,4rem);
+    }
+    .oreo-hero__heading {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.75rem, 3.6vw, 3.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+      color: #e4582c;
+      max-width: none;
+    }
+
+    /* ── Video ── */
+    .oreo-video { padding: 0 var(--pad-x); }
+    .oreo-video__frame {
+      width: 100%; aspect-ratio: 16/9;
+      overflow: hidden; position: relative;
+    }
+    .oreo-video__frame video {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    /* ── Marquee ── */
+    .oreo-marquee {
+      overflow: hidden;
+      padding: 1rem 0;
+      margin: clamp(2rem,4vw,3.5rem) 0;
+    }
+    .oreo-marquee__track {
+      display: flex;
+      width: max-content;
+      animation: oreoMarquee 20s linear infinite;
+      will-change: transform;
+    }
+    .oreo-marquee__track img {
+      height: 100px; width: auto;
+      display: block; flex-shrink: 0;
+      padding: 0 0.5rem;
+    }
+    @keyframes oreoMarquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Quote ── */
+    .oreo-quote {
+      text-align: center;
+      padding: clamp(1.5rem,3vw,2.5rem) var(--pad-x);
+    }
+    .oreo-quote p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1.4vw, 1.2rem);
+      line-height: 1.75;
+      color: var(--t60);
+      letter-spacing: -0.05em;
+    }
+
+    /* ── Logo construction + floating cookies ── */
+    .oreo-logo-wrap {
+      position: relative;
+      padding: clamp(4rem,8vw,7rem) var(--pad-x) clamp(1.5rem,3vw,2.5rem);
+      overflow: hidden;
+    }
+    .oreo-logo-img { width: 100%; display: block; }
+    .oreo-cookie {
+      position: absolute;
+      pointer-events: none;
+      filter: drop-shadow(0 16px 40px rgba(0,0,0,0.55));
+      top: 50%;
+    }
+    .oreo-cookie--left {
+      width: 400px;
+      left: -60px;
+      animation: cookieL 5s ease-in-out infinite;
+    }
+    .oreo-cookie--right {
+      width: 420px;
+      right: -60px;
+      animation: cookieR 5s ease-in-out 2.5s infinite;
+    }
+    @keyframes cookieL {
+      0%,100% { transform: translateY(-50%) rotate(346deg); }
+      50%      { transform: translateY(calc(-50% - 16px)) rotate(346deg); }
+    }
+    @keyframes cookieR {
+      0%,100% { transform: translateY(-50%) rotate(27deg); }
+      50%      { transform: translateY(calc(-50% - 16px)) rotate(27deg); }
+    }
+
+    /* ── Challenge & Strategy ── */
+    .oreo-cs {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem,5vw,5rem);
+      padding: clamp(2rem,5vw,4rem) var(--pad-x);
+    }
+    .oreo-cs__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 47px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.875rem, 1.8vw, 1.625rem);
+      letter-spacing: -0.05em;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .oreo-cs__badge--orange { background: #e4582c; color: #fff; }
+    .oreo-cs__badge--blue   { background: #53a4d9; color: #fff; }
+    .oreo-cs__text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: clamp(0.8rem, 1.3vw, 1.1rem);
+      line-height: 1.8;
+      color: var(--t60);
+      letter-spacing: -0.05em;
+    }
+
+    /* ── Bottom image pair (bag + billboard1) ── */
+    .oreo-bottom-images {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(0.75rem,1.5vw,1.25rem);
+      padding: 0 var(--pad-x) clamp(2rem,4vw,3rem);
+      align-items: stretch;
+    }
+    .oreo-bottom-images img {
+      width: 100%; display: block; border-radius: 4px;
+      height: 100%; object-fit: cover;
+    }
+
+    /* ── Social Media ── */
+    .oreo-social {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1rem,2vw,2rem);
+      padding: clamp(3rem,6vw,5rem) var(--pad-x);
+      align-items: stretch;
+      overflow: hidden;
+    }
+    .oreo-social__left {
+      position: relative;
+      overflow: hidden;
+    }
+    .oreo-social__textbg {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: clamp(4rem, 9vw, 8.5rem);
+      letter-spacing: -0.05em;
+      line-height: 0.88;
+      color: #e4582c;
+      text-transform: uppercase;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      overflow: hidden;
+      user-select: none;
+      pointer-events: none;
+    }
+    .oreo-social__img {
+      width: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.5));
+    }
+    .oreo-social__mockup {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Sachet grid ── */
+    .oreo-sachets {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      padding: 0 var(--pad-x) clamp(2rem,4vw,3rem);
+    }
+    .oreo-sachets img {
+      width: 100%;
+      aspect-ratio: 306 / 265;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── Billboard 2 ── */
+    .oreo-billboard2 {
+      padding: 0 var(--pad-x) clamp(2rem,4vw,3rem);
+    }
+    .oreo-billboard2 img {
+      width: 100%; display: block; border-radius: 4px;
+    }
+
+    /* ── Brand Manual ── */
+    .oreo-brand-manual {
+      background: #e4582c;
+      padding: clamp(2.5rem,5vw,4rem) var(--pad-x);
+      text-align: center;
+    }
+    .oreo-brand-manual__heading {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 2vw, 1.625rem);
+      color: #0b1318;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: clamp(1.5rem,3vw,2.5rem);
+    }
+    .oreo-brand-manual__frame {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: none;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* ── What shaped this project? ── */
+    .oreo-shaped {
+      padding: clamp(3rem,6vw,5rem) var(--pad-x);
+    }
+    .oreo-shaped__bar {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #f2e8d9;
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      letter-spacing: 0.15em;
+      color: #e4582c;
+      text-transform: uppercase;
+      margin-bottom: clamp(2.5rem,5vw,4rem);
+    }
+    .oreo-shaped__keywords {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: clamp(0.5rem,1.5vw,1.5rem);
+      flex-wrap: nowrap;
+    }
+    .oreo-kw {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.05;
+    }
+    .oreo-kw__p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1rem, 2vw, 1.75rem);
+      letter-spacing: -0.05em;
+      color: #ffffff;
+    }
+    .oreo-kw__e {
+      font-family: adobe-handwriting-ernie, cursive;
+      font-size: clamp(1.4rem, 2.8vw, 2.4rem);
+      color: #e4582c;
+      line-height: 1;
+    }
+    .oreo-kw__dot {
+      color: #ffffff;
+      font-size: clamp(0.4rem, 0.7vw, 0.6rem);
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    @media (max-width: 768px) {
+      .oreo-cs { grid-template-columns: 1fr; }
+      .oreo-bottom-images { grid-template-columns: 1fr; }
+      .oreo-social { grid-template-columns: 1fr; }
+      .oreo-social__mockup { width: 100%; height: auto; }
+      .oreo-sachets { grid-template-columns: repeat(2, 1fr); }
+      .oreo-shaped__keywords { flex-direction: column; gap: 1.5rem; flex-wrap: wrap; }
+      .oreo-cookie--left { width: 200px; left: -30px; }
+      .oreo-cookie--right { width: 240px; right: -40px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">skip to content</a>
+
+  <header id="nav" class="nav is-visible" role="banner">
+    <a href="../../" class="nav__brand">the kashish way</a>
+    <nav class="nav__links" aria-label="main navigation">
+      <a href="../../work/"    class="nav__link is-active">work</a>
+      <a href="../../gallery/" class="nav__link">gallery</a>
+      <a href="../../blogs/"   class="nav__link">my notebook</a>
+      <a href="../../about/"   class="nav__link">who am i?</a>
+      <a href="../../contact/" class="nav__link">let's talk!</a>
+    </nav>
+    <button class="nav__toggle" id="nav-toggle"
+            aria-label="open menu" aria-expanded="false" aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <nav id="nav-drawer" class="nav__drawer" aria-label="mobile navigation">
+    <a href="../../work/"    class="nav__link">work</a>
+    <a href="../../gallery/" class="nav__link">gallery</a>
+    <a href="../../blogs/"   class="nav__link">my notebook</a>
+    <a href="../../about/"   class="nav__link">who am i?</a>
+    <a href="../../contact/" class="nav__link">let's talk!</a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="oreo-hero">
+      <h1 class="oreo-hero__heading reveal">
+        how can a brand that shaped our childhood remain relevant to a generation reshaping itself?
+      </h1>
+    </section>
+
+    <!-- Video -->
+    <div class="oreo-video">
+      <div class="oreo-video__frame">
+        <video autoplay muted loop playsinline controls preload="auto">
+          <source src="OreoVideo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Infinite marquee -->
+    <div class="oreo-marquee" aria-hidden="true">
+      <div class="oreo-marquee__track">
+        <img src="OreoElements1.png" alt=""><img src="OreoElements2.png" alt="">
+        <img src="OreoElements3.png" alt=""><img src="OreoElements4.png" alt="">
+        <img src="OreoElements1.png" alt=""><img src="OreoElements2.png" alt="">
+        <img src="OreoElements3.png" alt=""><img src="OreoElements4.png" alt="">
+        <img src="OreoElements1.png" alt=""><img src="OreoElements2.png" alt="">
+        <img src="OreoElements3.png" alt=""><img src="OreoElements4.png" alt="">
+        <!-- duplicate for seamless loop -->
+        <img src="OreoElements1.png" alt=""><img src="OreoElements2.png" alt="">
+        <img src="OreoElements3.png" alt=""><img src="OreoElements4.png" alt="">
+        <img src="OreoElements1.png" alt=""><img src="OreoElements2.png" alt="">
+        <img src="OreoElements3.png" alt=""><img src="OreoElements4.png" alt="">
+        <img src="OreoElements1.png" alt=""><img src="OreoElements2.png" alt="">
+        <img src="OreoElements3.png" alt=""><img src="OreoElements4.png" alt="">
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="oreo-quote reveal">
+      <p>The strongest brands aren't remembered because they stay the same.<br>
+         They're remembered because they evolve without losing who they are.</p>
+    </div>
+
+    <!-- Logo construction + floating cookies -->
+    <div class="oreo-logo-wrap">
+      <img src="OreoCookie1.png" alt="" class="oreo-cookie oreo-cookie--left" aria-hidden="true">
+      <img src="OreoCookie2.png" alt="" class="oreo-cookie oreo-cookie--right" aria-hidden="true">
+      <img src="LogoConstruction.png" alt="Oreo logo construction" class="oreo-logo-img reveal">
+    </div>
+
+    <!-- Challenge & Strategy -->
+    <div class="oreo-cs">
+      <div class="reveal" data-delay="0.05">
+        <span class="oreo-cs__badge oreo-cs__badge--orange">Challenge</span>
+        <p class="oreo-cs__text">Oreo is one of the most recognisable snack brands in the world. As younger consumers become increasingly health-conscious, this explores how the brand could extend into a new category without losing its core identity.</p>
+      </div>
+      <div class="reveal" data-delay="0.12">
+        <span class="oreo-cs__badge oreo-cs__badge--blue">Strategy</span>
+        <p class="oreo-cs__text">Leveraging Oreo's existing emotional connection with consumers and translate it into a new category. The concept balances familiarity and aspiration, allowing the brand to enter the fitness space without losing its recognisable identity.</p>
+      </div>
+    </div>
+
+    <!-- Bag + Billboard 1 -->
+    <div class="oreo-bottom-images">
+      <img src="Oreobag.png" alt="Oreo tote bag mockup" class="reveal" data-delay="0.05">
+      <img src="OreoBillboard1.png?v=3" alt="Oreo billboard mockup" class="reveal" data-delay="0.1">
+    </div>
+
+    <!-- ══════════════ SECOND HALF ══════════════ -->
+
+    <!-- Social Media section -->
+    <section class="oreo-social">
+      <div class="oreo-social__left">
+        <div class="oreo-social__textbg" aria-hidden="true">
+          SOCIAL MEDIA<br>SOCIAL MEDIA<br>SOCIAL MEDIA<br>SOCIAL MEDIA<br>SOCIAL MEDIA<br>SOCIAL MEDIA
+        </div>
+        <img src="SocialMedia.png?v=3" alt="Oreo social media campaign" class="oreo-social__img reveal">
+      </div>
+      <img src="OreoSachets.png" alt="Oreo sachet mockup" class="oreo-social__mockup reveal" data-delay="0.1">
+    </section>
+
+    <!-- Sachet variants grid -->
+    <div class="oreo-sachets">
+      <img src="OreoSachet1.png" alt="Oreo sachet variant 1" class="reveal" data-delay="0.05">
+      <img src="OreoSachet3.png" alt="Oreo sachet variant 2" class="reveal" data-delay="0.1">
+      <img src="OreoSachet4.png" alt="Oreo sachet variant 3" class="reveal" data-delay="0.15">
+      <img src="OreoSachet5.png" alt="Oreo sachet variant 4" class="reveal" data-delay="0.2">
+    </div>
+
+    <!-- Billboard 2 -->
+    <div class="oreo-billboard2">
+      <img src="OreoBillboard2.png" alt="Oreo billboard campaign" class="reveal">
+    </div>
+
+    <!-- Brand Manual -->
+    <div class="oreo-brand-manual">
+      <p class="oreo-brand-manual__heading">brand manual</p>
+      <iframe
+        class="oreo-brand-manual__frame"
+        src="https://heyzine.com/flip-book/42b1bf336c.html"
+        title="Oreo Brand Manual flipbook"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- What shaped this project? -->
+    <section class="oreo-shaped">
+      <span class="oreo-shaped__bar reveal">What shaped this project?</span>
+      <div class="oreo-shaped__keywords reveal" data-delay="0.1">
+        <span class="oreo-kw">
+          <span class="oreo-kw__p">Childhood</span>
+          <span class="oreo-kw__e">nostalgia</span>
+        </span>
+        <span class="oreo-kw__dot">●</span>
+        <span class="oreo-kw">
+          <span class="oreo-kw__e">emotional</span>
+          <span class="oreo-kw__p">branding</span>
+        </span>
+        <span class="oreo-kw__dot">●</span>
+        <span class="oreo-kw">
+          <span class="oreo-kw__p">Changing,</span>
+          <span class="oreo-kw__e">lifestyles</span>
+        </span>
+        <span class="oreo-kw__dot">●</span>
+        <span class="oreo-kw">
+          <span class="oreo-kw__e">conscious</span>
+          <span class="oreo-kw__p">consumption</span>
+        </span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__left">
+      <p class="footer__brand">the kashish way</p>
+      <p class="footer__tagline">communication design rooted in culture, craft, and curiosity.</p>
+      <p class="footer__copy">© 2025 kashish shah. all rights reserved.</p>
+    </div>
+    <div class="footer__right">
+      <nav class="footer__nav">
+        <a href="../../work/">work</a>
+        <a href="../../gallery/">gallery</a>
+        <a href="../../blogs/">my notebook</a>
+        <a href="../../about/">who am i?</a>
+        <a href="../../contact/">let's talk!</a>
+      </nav>
+      <div class="footer__social">
+        <a href="https://www.behance.net/kashishshah23" target="_blank" rel="noopener noreferrer">behance</a>
+        <a href="https://www.instagram.com/kashishshahdesign/" target="_blank" rel="noopener noreferrer">instagram</a>
+        <a href="https://www.linkedin.com/in/kashish-shah-graphic-designer/" target="_blank" rel="noopener noreferrer">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
